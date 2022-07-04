@@ -1,0 +1,23 @@
+<!-- <app-message></app-message> -->
+
+<form [formGroup]="formGroup">
+<!-- <angular-editor id="textArea" formControlName="textArea" [placeholder]="'Enter text here...'" [config]="editorConfig" [(ngModel)]="htmlContent" (keyup)="txtEditorPosition()" (click)="txtEditorPosition()"></angular-editor>
+<button id="buttonClick" (click)="buttonClick()">CLICK ME</button> -->
+
+<!-- <button id="buttonClick1" (click)="buttonClick1()">CLICK ME 1</button> -->
+<!-- <button id="buttonClick1" (click)="addTextDynamically()">CLICK ME 1</button> -->
+
+<!-- <angular-editor #editor [(ngModel)]="htmlContent" [config]="editorConfig" (ngModelChange)="onContentChange($event)"></angular-editor> -->
+
+
+<!-- <angular-editor #editor [(ngModel)]="htmlContent" [config]="editorConfig"></angular-editor>
+    <button (click)="editor.editorService.insertHtml('enter-your-text-here')">ADD TEXT</button> -->
+    <div class="col-6" style="width: 250px;">
+        <div class="form-group">
+            <angular-editor #editor (ngModel)="htmlContent" [config]="editorConfig"></angular-editor>
+        </div>
+    </div>
+    
+    <button id="buttonClick1" (click)="buttonClick2()">CLICK ME 2</button>
+    <button id="buttonClick1" (click)="buttonClick3()" style="margin-top: 50px; margin-left: 10px;">CLICK ME 3</button>
+</form>

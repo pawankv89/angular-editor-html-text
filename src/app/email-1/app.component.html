@@ -1,0 +1,46 @@
+<!-- <app-message></app-message> -->
+
+<!-- <form [formGroup]="formGroup">
+
+    <div class="col-6" style="width: 250px;">
+        <div class="form-group">
+            <angular-editor #editor (ngModel)="htmlContent" [config]="editorConfig" formControlName="textArea"></angular-editor>
+            <angular-editor #editor (ngModel)="htmlContent" [config]="editorConfig" formControlName="textArea" [placeholder]="'Enter html text here...'"></angular-editor>
+        </div>
+    </div>
+    <button id="buttonClick1" (click)="buttonClick2()">CLICK ME 2</button>
+    <button id="buttonClick1" (click)="buttonClick3()" style="margin-top: 50px; margin-left: 10px;">CLICK ME 3</button> 
+</form> -->
+
+<form [formGroup]="formGroup">
+
+    <div class="col-6" style="width: 250px;">
+        <div class="form-group">
+            <label for="scheduledtime">Insert Cars</label>
+            <ng-select #insertdatafieldlistBlur (change)="insertdatafieldlistBlur.blur()" id="insertdatafield"
+                [items]="cars" bindLabel="name" bindValue="value" placeholder="Select cars" appendTo="body"
+                [multiple]="false" (ngModelChange)="insertDataFieldSelect($event)"
+                (clear)="clearInsertDataField()" formControlName="insertField" [selectOnTab]="true" [clearable]="true">
+            </ng-select>
+        </div>
+    </div>
+
+    <hr />
+
+    <select class="form-control" #Select (change)="consoleLog(Select.value)" (click)="editorFocusEmail()">
+        <option *ngFor="let car of cars" [ngValue]="car">{{ car.name }}</option>
+      </select>
+
+    <hr />
+
+    <div class="form-row">
+        <div class="col">
+            <angular-editor #editor id="templateBody" name="templateBody" formControlName="templateBody"
+                [config]="editorConfig" (keyup)="getEditorFocus()" (keydown)="getEditorFocus()"></angular-editor>
+            <p class="invalid-feedback" *ngIf="formGroup.controls.templateBody.errors?.required">PLEASE_ENTER_MESSAGE
+            </p>
+        </div>
+    </div>
+
+    <button id="buttonClick1" (click)="buttonClick3()" style="margin-top: 50px; margin-left: 10px;">CLICK ME 3</button>
+</form>

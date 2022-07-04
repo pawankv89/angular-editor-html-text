@@ -1,0 +1,58 @@
+<form [formGroup]="formGroup">
+  <h1>Multi-Select Dropdown using Angular 11/10</h1>
+
+  <div class="col-6" style="width: 250px;">
+    <div class="form-group">
+      <label for="scheduledtime">Insert Cars</label>
+      <ng-select 
+      #insertdatafieldlistBlur 
+      (change)="insertdatafieldlistBlur.blur()" 
+      id="insertdatafield" 
+      [items]="cars"
+      bindLabel="name" 
+      bindValue="value" 
+      placeholder="Select cars" 
+      appendTo="body" 
+      [multiple]="false"
+      [(ngModel)]="selected" 
+      (ngModelChange)="insertDataFieldSelect($event)" 
+      (clear)="clearInsertDataField()"
+      formControlName="insertField" 
+      [selectOnTab]="true" 
+      [clearable]="true">
+      </ng-select>
+    </div>
+  </div>
+</form>
+
+<hr />
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <title>How to add text to textarea when user clicks a button</title>
+</head>
+
+<body>
+  <h1>How to add text to textarea when user clicks a button</h1>
+  <div id="divDroppedFields">
+    <textarea id="textArea" name="txtMessageFields" class="required" cols="80" rows="10" (click)="getCaretPosition($event)"
+      (keyup)="getCaretPosition($event)">
+	In the meantime the cat slowly recovered. The socket of the lost eye presented, it is true, a frightful appearance, but he no longer appeared to suffer any pain.
+	</textarea>
+  </div>
+  <button id="buttonClick" (click)="buttonClick()">CLICK ME</button>
+</body>
+
+</html>
+
+
+<!-- When user click button then cursor move to 10 char-->
+<!-- <div contenteditable id="myDiv">
+  hello world
+</div>
+<button id="buttonClick1" (click)="buttonClick1()">CLICK ME 1</button>
+<button id="buttonClick2" (click)="buttonClick2()">CLICK ME 2</button> -->
